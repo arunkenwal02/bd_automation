@@ -6,6 +6,7 @@ from rest_framework import status, generics
 import sys
 from .bd_portal import *
 from multiprocessing import Process, Manager
+import logging
 
 
 class ExcelImport(generics.GenericAPIView):
@@ -116,9 +117,16 @@ class ExcelImport(generics.GenericAPIView):
             sys.exc_info()[-1].tb_lineno)})
 
 
+logger = logging.getLogger(__name__)
+
+
 class DelApi(generics.GenericAPIView):
     def delete(self, request):
-        instance = ProjectDetail.objects.get(project_id=2)
-        instance.delete()
-        print('lll')
-        return Response({"message": "data deleted"})
+        logger.info("Delete request received")
+        deleted, _ = ProjectDetail.objects.filter(project_id=3).delete()
+        if deleted:
+            logger.info("Data deleted successfully")
+            return Response({"message": "Data deleted"}, status=status.HTTP_200_OK)
+        else:
+            logger.info("No data found to delete")
+            return Response({"message": "No data found"}, status=status.HTTP_404_NOT_FOUND)

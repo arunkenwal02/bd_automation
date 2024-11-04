@@ -131,7 +131,7 @@ def solar_profile(excel_file, param_id, error_dict):
 def wind_profile(excel_file, param_id, error_dict):
     try:
         xlsx = pd.ExcelFile(excel_file)
-        wind_gen = pd.read_excel(xlsx, sheet_name='Wind Profile', usecols='A:J', skiprows=6, engine='openpyxl')
+        wind_gen = pd.read_excel(xlsx, sheet_name='Wind Profile', skiprows=6, engine='openpyxl')
         wind_gen = wind_gen.melt(id_vars=['Day of year', 'Time'], value_vars=wind_gen.columns[5:-1], var_name='Unit',
                                  value_name='Generation Value')
         wind_gen['Generation Value'].fillna(0, inplace=True)
