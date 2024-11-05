@@ -7,3 +7,72 @@ Delete request received
 Data deleted successfully
 C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Bad Request: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '172.22.36.75:8000'. You may need to add '172.22.36.75' to ALLOWED_HOSTS.
+Bad Request: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
