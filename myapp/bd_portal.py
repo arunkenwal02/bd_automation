@@ -1,7 +1,10 @@
+import random
+
 import pandas as pd
 from multiprocessing import Process
 from .db_con import engine
 import warnings
+
 warnings.filterwarnings("ignore")
 
 
@@ -119,8 +122,12 @@ def solar_profile(excel_file, param_id, error_dict):
 
         solar_gen_inputs['Unit'] = solar_gen_inputs['Unit'].str.extract(r'(\d+)').astype(int)
         solar_gen_inputs['Generation Value'].fillna(0, inplace=True)
-        solar_gen_inputs['cuf'] = solar_gen_inputs.groupby('Unit')['Generation Value'].transform('mean')
-        solar_gen_inputs.columns = ['day_of_year', 'time', 'unit', 'generation_value', 'cuf']
+        solar_gen_inputs.columns = ['day_of_year', 'time', 'unit', 'generation_value']
+        cuf_val = pd.read_excel(xlsx, sheet_name='Solar Profile', nrows=1, engine='openpyxl')
+        cuf = pd.DataFrame()
+        cuf['cuf'] = cuf_val.iloc[:, 5:-1].T.reset_index(drop=True).fillna(0)
+        cuf['unit'] = cuf.index + 1
+        solar_gen_inputs = solar_gen_inputs.merge(cuf, on='unit')
         solar_gen_inputs['version_id'] = param_id
         solar_gen_inputs.to_sql('myapp_solarprofile', con=engine, if_exists='append', index=False)
 
@@ -136,11 +143,31 @@ def wind_profile(excel_file, param_id, error_dict):
                                  value_name='Generation Value')
         wind_gen['Generation Value'].fillna(0, inplace=True)
         wind_gen['Unit'] = wind_gen['Unit'].str.extract(r'(\d+)').astype(int)
-        wind_gen['cuf'] = wind_gen.groupby('Unit')['Generation Value'].transform('mean')
-        wind_gen['mw_per_turbine'] = wind_gen['Unit'].apply(lambda x: 3.15 if x == 1 else 4)
-        wind_gen.columns = ['day_of_year', 'time', 'unit', 'generation_value', 'cuf', 'mw_per_turbine']
+        wind_gen.columns = ['day_of_year', 'time', 'unit', 'generation_value']
+        wind_cuf = pd.read_excel(xlsx, sheet_name='Wind Profile', skiprows=1, nrows=3,
+                                 engine='openpyxl')
+        wind_cuf = wind_cuf.iloc[:, 5:-1].T.reset_index(drop=True).fillna(0)
+        wind_cuf.columns = ['cuf', 'mw_per_turbine']
+        wind_cuf['unit'] = wind_cuf.index + 1
+        wind_gen = wind_gen.merge(wind_cuf, on='unit')
         wind_gen['version_id'] = param_id
         wind_gen.to_sql('myapp_windprofile', con=engine, if_exists='append', index=False)
 
     except Exception as e:
         error_dict['wind_profile'] = str(e)
+
+
+def output(x, n, other_id):
+    solar_values = pd.DataFrame({
+        'solar_value': [random.uniform(0, 50) for _ in range(x)],
+        'otherattribute_id': other_id
+    })
+    wind_values = pd.DataFrame({
+        'wind_value': [random.uniform(0, 50) for _ in range(n)],
+        'otherattribute_id': other_id
+    })
+    solar_values.to_sql('myapp_solaroutput', con=engine, if_exists='append', index=False)
+    wind_values.to_sql('myapp_windoutput', con=engine, if_exists='append', index=False)
+    return solar_values['solar_value'], wind_values['wind_value']
+
+

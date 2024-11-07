@@ -4,5 +4,6 @@ from .views import *
 
 urlpatterns = [
     path('insertparam/', ExcelImport.as_view()),
+    path('retrieve/', RetrieveApi.as_view()),
     path('del/', DelApi.as_view())
 ]

@@ -76,3 +76,2033 @@ C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py 
 Watching for file changes with StatReloader
 C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '200.0'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 41, in post
+    existing_data = InputParameters.objects.filter(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'target_nh3_production_ktpa' expected a number but got '200.0'.
+Watching for file changes with StatReloader
+Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Bad Request: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2027, in get_prep_value
+    return float(value)
+           ^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 41, in post
+    existing_data = InputParameters.objects.filter(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2029, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'max_iex_sale_perc' expected a number but got ''.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2027, in get_prep_value
+    return float(value)
+           ^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 41, in post
+    existing_data = InputParameters.objects.filter(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2029, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'max_iex_sale_perc' expected a number but got ''.
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+Bad Request: /bd_auto/insertparam/
+Bad Request: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+Bad Request: /bd_auto/insertparam/
+Bad Request: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2027, in get_prep_value
+    return float(value)
+           ^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 41, in post
+    existing_data = InputParameters.objects.filter(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2029, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'max_ci_kg_CO2_kg_H2' expected a number but got ''.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+Bad Request: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\models.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 124, in post
+    project_id = ProjectDetail.objects.get(instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1488, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ProjectDetail is not JSON serializable
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ProjectDetail is not JSON serializable
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ProjectDetail is not JSON serializable
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 123, in post
+    instance = request.data['project_id'].astype(int)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'astype'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 125, in post
+    project_id = ProjectDetail.objects.get(project_id=instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+myapp.models.ProjectDetail.DoesNotExist: ProjectDetail matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 128, in post
+    return Response(f"{project_id} does not exists.")
+                       ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'project_id' where it is not associated with a value
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'version'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 124, in post
+    missing_fields = [field for field in required_field if not request.data[field]]
+                                                               ~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'version'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 126, in post
+    return Response({'error': f"field missing {ast.literal_eval(missing_fields)}"})
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\ast.py", line 112, in literal_eval
+    return _convert(node_or_string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\ast.py", line 111, in _convert
+    return _convert_signed_num(node)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\ast.py", line 85, in _convert_signed_num
+    return _convert_num(node)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\ast.py", line 76, in _convert_num
+    _raise_malformed_node(node)
+  File "C:\Program Files\Python312\Lib\ast.py", line 73, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string: ['project_id', 'version']
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 131, in post
+    version_query = InputParameters.objects.filter(version).first()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1488, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 131, in post
+    version_query = InputParameters.objects.get(version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\query.py", line 1488, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 132, in post
+    return Response({'version_id': version_query.id})
+                                   ^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'id'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 131, in post
+    print(version_query.id)
+          ^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'id'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 121, in post
+    link, create_output = OtherAttributeOutput.objects.create(
+    ^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable OtherAttributeOutput object
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 75, in post
+    link, create_output = OtherAttributeOutput.objects.create(
+    ^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable OtherAttributeOutput object
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 74, in post
+    instance, create_output = OtherAttributeOutput.objects.create(
+    ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable OtherAttributeOutput object
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 85, in post
+    output(request.data['number_of_solar_sites'], request.data['number_of_wind_sites'], create_output.id)
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py", line 162, in output
+    'solar_value': [random.uniform(0, 50) for _ in range(x)],
+                                                   ^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 170, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 241, in executemany
+    return self._do_execute_many(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 275, in _do_execute_many
+    rows += self.execute(sql + postfix)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1364, "Field 'created_at' doesn't have a default value")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 85, in post
+    output(existing_data.number_of_solar_sites, existing_data.number_of_wind_sites, create_output.id)
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py", line 169, in output
+    solar_values.to_sql('myapp_solaroutput', con=engine, if_exists='append', index=False)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 1567, in insert_records
+    raise err
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\io\sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\engine\base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 170, in do_executemany
+    rowcount = cursor.executemany(statement, parameters)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 241, in executemany
+    return self._do_execute_many(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 275, in _do_execute_many
+    rows += self.execute(sql + postfix)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb.IntegrityError) (1364, "Field 'created_at' doesn't have a default value")
+[SQL: INSERT INTO myapp_solaroutput (solar_value, otherattribute_id) VALUES (%s, %s)]
+[parameters: [(46.69048748150143, 5), (32.487228297934074, 5), (16.679336342260427, 5), (26.71950440416525, 5), (10.423288722785756, 5)]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 131, in post
+    output(create_param.number_of_solar_sites, create_param.number_of_wind_sites, create_output.id)
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py", line 162, in output
+    'solar_value': [random.uniform(0, 50) for _ in range(x)],
+                                                   ^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 131, in post
+    output(create_param.number_of_solar_sites, create_param.number_of_wind_sites, create_output.id)
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py", line 162, in output
+    'solar_value': [random.uniform(0, 50) for _ in range(x)],
+                                                   ^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 134, in post
+    solar_value=[random.uniform(0, 50) for _ in range(create_param.number_of_solar_sites)],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 134, in post
+    solar_value=[random.uniform(0, 50) for _ in range(request.data['number_of_solar_sites'])],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2027, in get_prep_value
+    return float(value)
+           ^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 133, in post
+    SolarOutput.objects.create(
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\compiler.py", line 1760, in as_sql
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\sql\compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\db\models\fields\__init__.py", line 2029, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'solar_value' expected a number but got [29.01665187560598, 28.435749930354408, 31.621335555212397, 3.3795308193894313, 16.90091575783627].
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Conflict: /bd_auto/insertparam/
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/insertparam/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'wind_values'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 130, in post
+    s_w_o_t = output(int(create_param.number_of_solar_sites), int(create_param.number_of_wind_sites), create_output.id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py", line 171, in output
+    return solar_values['solar_value'], wind_values['wind_values']
+                                        ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'wind_values'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\bd_portal.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 168, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1202, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'version_id' was included on serializer OtherAttributeOutputSerializer in the 'exclude' option, but does not match any model field.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 168, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1202, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'version_id' was included on serializer OtherAttributeOutputSerializer in the 'exclude' option, but does not match any model field.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 167, in post
+    query = OtherAttributeOutput.objects.filter(version_id=version_query.id).first()
+                                                           ^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'id'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1202, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'version_id' was included on serializer OtherAttributeOutputSerializer in the 'exclude' option, but does not match any model field.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `ghs_capacity_tonnes` on serializer `OtherAttributeOutputSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1202, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'version_id' was included on serializer OtherAttributeOutputSerializer in the 'exclude' option, but does not match any model field.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 1202, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'version_id' was included on serializer OtherAttributeOutputSerializer in the 'exclude' option, but does not match any model field.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `ghs_capacity_tonnes` on serializer `OtherAttributeOutputSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 169, in post
+    return Response(serializer.data, status=status.HTTP_200_OK)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `ghs_capacity_tonnes` on serializer `OtherAttributeOutputSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'ghs_capacity_tonnes'.
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py", line 167, in post
+    solar_value = SolarOutput.objects.filter(otherattribute_id=query.id).solar_value
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'solar_value'
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /bd_auto/retrieve/
+Traceback (most recent call last):
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\python.developer\Desktop\bd_automation\bd_auto\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type function is not JSON serializable
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\python.developer\Desktop\bd_automation\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader

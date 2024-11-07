@@ -141,3 +141,32 @@ class WindProfileSerializer(serializers.ModelSerializer):
             instance = self.Meta.model.objects.create(**validated_data)
             return instance
 
+
+class OtherAttributeOutputSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OtherAttributeOutput
+        exclude = ['id', 'version', "created_at"]
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance
+
+
+class SolarOutputSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SolarOutput
+        exclude = ['id', 'otherattribute']
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance
+
+
+class WindOutputSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WindOutput
+        exclude = ['id', 'otherattribute']
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance

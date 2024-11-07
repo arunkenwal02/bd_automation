@@ -22,7 +22,7 @@ class InputParameters(models.Model):
     processed = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
-        last_version = InputParameters.objects.filter(project=self.project, excel_file=self.excel_file).aggregate(Max('version'))[
+        last_version = InputParameters.objects.filter(project=self.project).aggregate(Max('version'))[
                            'version__max'] or 0
 
         self.version = last_version + 1
@@ -150,3 +150,29 @@ class WindProfile(models.Model):
     cuf = models.FloatField()
     mw_per_turbine = models.FloatField()
     version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
+
+
+class OtherAttributeOutput(models.Model):
+    id = models.AutoField(primary_key=True)
+    ghs_capacity_tonnes = models.FloatField()
+    electrolyser_capacity_mw = models.FloatField()
+    bid_capacity_mw = models.FloatField()
+    nh3_production_tonnes = models.FloatField()
+    carbon_intensity_h2 = models.FloatField()
+    carbon_intensity_nh3 = models.FloatField()
+    iex_sale_percentage = models.FloatField()
+    version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
+    created_at = models.DateField(auto_now_add=True)
+
+
+class SolarOutput(models.Model):
+    id = models.AutoField(primary_key=True)
+    otherattribute = models.ForeignKey(OtherAttributeOutput, on_delete=models.CASCADE)
+    solar_value = models.FloatField()
+
+
+class WindOutput(models.Model):
+    id = models.AutoField(primary_key=True)
+    otherattribute = models.ForeignKey(OtherAttributeOutput, on_delete=models.CASCADE)
+    wind_value = models.FloatField()
+
