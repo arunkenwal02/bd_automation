@@ -2,6 +2,16 @@ from rest_framework import serializers
 from .models import *
 
 
+class ProjectDeatailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectDetail
+        exclude = ['project_id', 'created_at']
+
+    def create(self, validated_data):
+        instance = self.Meta.objects.create(**validated_data)
+        return instance
+
+
 class InputParameterSerializer(serializers.ModelSerializer):
     class Meta:
         model = InputParameters
@@ -166,6 +176,36 @@ class WindOutputSerializer(serializers.ModelSerializer):
     class Meta:
         model = WindOutput
         exclude = ['id', 'otherattribute']
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance
+
+
+class ProjectAssumptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectAssumption
+        fields = '__all__'
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance
+
+
+class Solar_ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Solar_Profile
+        fields = '__all__'
+
+        def create(self, validated_data):
+            instance = self.Meta.model.objects.create(**validated_data)
+            return instance
+
+
+class Wind_ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wind_Profile
+        fields = '__all__'
 
         def create(self, validated_data):
             instance = self.Meta.model.objects.create(**validated_data)

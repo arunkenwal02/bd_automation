@@ -7,38 +7,65 @@ import sys
 from .bd_portal import *
 from multiprocessing import Process, Manager
 import logging
+from django.shortcuts import render
+
+
+class CreateProject(generics.GenericAPIView):
+    serializer_class = ProjectDeatailSerializer
+
+    def post(self, request):
+        try:
+            if not request.data['project_name']:
+                return Response("Please enter a Project Name to proceed.",
+                                status=status.HTTP_400_BAD_REQUEST)
+            if ProjectDetail.objects.filter(project_name=request.data['project_name']).exists():
+                return Response(f"{request.data['project_name']} already exists.",
+                                status=status.HTTP_409_CONFLICT)
+            project = ProjectDetail.objects.create(project_name=request.data['project_name'],
+                                                   description=request.data['Description'])
+            serializer = self.get_serializer(project)
+            return Response({'message': f"Project {project.project_name} created successfully!",
+                             'status': status.HTTP_201_CREATED,
+                             'data': serializer.data})
+        except Exception as err:
+            return Response({"error": f"{type(err).__name__} was raised: {err} Error on line " + format(
+                sys.exc_info()[-1].tb_lineno)})
 
 
 class ExcelImport(generics.GenericAPIView):
     serializer_class = InputParameterSerializer
     queryset = InputParameters.objects.all()
 
-    try:
-        def post(self, request):
-            manager = Manager()
-            error_dict = manager.dict()
-            required_fields = [
-                'project_name',
-                'target_nh3_production_ktpa',
-                'max_iex_sale_perc',
-                'max_ci_kg_CO2_kg_H2',
-                'max_ci_t_CO2_t_NH3',
-                'number_of_solar_sites',
-                'number_of_wind_sites',
-                'excel_file'
-            ]
-            missing_fields = [field for field in required_fields if
-                              field not in request.data or not request.data[field]]
+    def get(self, request):
+        project_list = list(ProjectDetail.objects.values_list('project_name', flat=True))
+        return Response({'project_list': project_list}, status=status.HTTP_200_OK)
 
-            if missing_fields:
-                return Response({'error': f'Missing fields: {", ".join(missing_fields)}'},
-                                status=status.HTTP_400_BAD_REQUEST)
-            filepath = request.data['excel_file']
-            if not request.data['excel_file'].name.endswith(('xlsx', 'xls')):
-                return Response(
-                    {"error": "Invalid file type. Please upload an Excel file with .xlsx or .xls extension."},
-                    status=400)
-            instance, creatproject = ProjectDetail.objects.get_or_create(project_name=request.data['project_name'])
+    def post(self, request):
+
+        manager = Manager()
+        error_dict = manager.dict()
+        required_fields = [
+            'project_name',
+            'target_nh3_production_ktpa',
+            'max_iex_sale_perc',
+            'max_ci_kg_CO2_kg_H2',
+            'max_ci_t_CO2_t_NH3',
+            'number_of_solar_sites',
+            'number_of_wind_sites',
+            'excel_file'
+        ]
+        missing_fields = [field for field in required_fields if
+                          field not in request.data or not request.data[field]]
+
+        if missing_fields:
+            return Response({'error': f'Missing fields: {", ".join(missing_fields)}'},
+                            status=status.HTTP_400_BAD_REQUEST)
+        filepath = request.data['excel_file']
+        if not request.data['excel_file'].name.endswith(('xlsx', 'xls')):
+            return Response(
+                {"error": "Invalid file type. Please upload an Excel file with .xlsx or .xls extension."},
+                status=400)
+        try:
             existing_data = InputParameters.objects.filter(
                 target_nh3_production_ktpa=request.data['target_nh3_production_ktpa'],
                 max_iex_sale_perc=request.data['max_iex_sale_perc'],
@@ -47,7 +74,7 @@ class ExcelImport(generics.GenericAPIView):
                 number_of_solar_sites=request.data['number_of_solar_sites'],
                 number_of_wind_sites=request.data['number_of_wind_sites'],
                 excel_file=filepath.name,
-                project=instance
+                project__project_name=request.data['project_name']
             ).first()
 
             if existing_data:
@@ -57,10 +84,14 @@ class ExcelImport(generics.GenericAPIView):
                 else:
                     project_id = existing_data.id
                     processes = [
-                        Process(target=project_assumption, args=(filepath, project_id, error_dict)),
+                        # Process(target=project_assumption, args=(filepath, project_id, error_dict)),
                         Process(target=requrired_data, args=(filepath, project_id, error_dict)),
-                        Process(target=solar_profile, args=(filepath, project_id, error_dict)),
-                        Process(target=wind_profile, args=(filepath, project_id, error_dict))
+                        # Process(target=solar_profile, args=(filepath, project_id, error_dict)),
+                        # Process(target=wind_profile, args=(filepath, project_id, error_dict)),
+                        Process(target=project_assump, args=(filepath, project_id, error_dict)),
+                        Process(target=solarprofile, args=(filepath, project_id, error_dict)),
+                        Process(target=windprofile, args=(filepath, project_id, error_dict))
+
                     ]
 
                     for p in processes:
@@ -70,22 +101,24 @@ class ExcelImport(generics.GenericAPIView):
                     if error_dict:
                         error_messages = [f"{key}: {msg}" for key, msg in error_dict.items()]
                         print(error_messages)
-                        return Response({"status": "error"})
+                        return Response({"status": "error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                    df = main_func(project_id, error_dict)
                     create_output = OtherAttributeOutput.objects.create(
-                        ghs_capacity_tonnes=random.uniform(0, 50),
-                        electrolyser_capacity_mw=random.uniform(0, 50),
-                        bid_capacity_mw=random.uniform(0, 50),
-                        nh3_production_tonnes=random.uniform(0, 50),
-                        carbon_intensity_h2=random.uniform(0, 50),
-                        carbon_intensity_nh3=random.uniform(0, 50),
-                        iex_sale_percentage=random.uniform(0, 50),
+                        ghs_capacity_tonnes=round(random.uniform(0, 50), 2),
+                        electrolyser_capacity_mw=round(random.uniform(0, 50), 2),
+                        bid_capacity_mw=round(random.uniform(0, 50), 2),
+                        nh3_production_tonnes=round(random.uniform(0, 50), 2),
+                        carbon_intensity_h2=round(random.uniform(0, 50), 2),
+                        carbon_intensity_nh3=round(random.uniform(0, 50), 2),
+                        iex_sale_percentage=round(random.uniform(0, 50), 2),
                         version_id=project_id
                     )
-                    s_w_o_t = output(int(existing_data.number_of_solar_sites), int(existing_data.number_of_wind_sites), create_output.id)
+                    s_w_o_t = output(int(existing_data.number_of_solar_sites), int(existing_data.number_of_wind_sites),
+                                     create_output.id)
                     InputParameters.objects.filter(id=project_id).update(processed=1)
-                    # serializer = self.get_serializer(existing_data)
-
-                    return Response({
+                    serializer = self.get_serializer(existing_data)
+                    input_dict = serializer.data
+                    output_dict = {
                         'ghs_capacity_tonnes': create_output.ghs_capacity_tonnes,
                         'electrolyser_capacity_mw': create_output.electrolyser_capacity_mw,
                         'bid_capacity_mw': create_output.bid_capacity_mw,
@@ -93,10 +126,15 @@ class ExcelImport(generics.GenericAPIView):
                         'carbon_intensity_h2': create_output.carbon_intensity_h2,
                         'carbon_intensity_nh3': create_output.carbon_intensity_nh3,
                         'iex_sale_percentage': create_output.iex_sale_percentage,
-                        'solar_value': s_w_o_t[0],
-                        'wind_value': s_w_o_t[1]
-                    }, status=status.HTTP_201_CREATED)
+                        'solar_value': ", ".join(map(str, s_w_o_t[0])),
+                        'wind_value': ", ".join(map(str, s_w_o_t[1]))
+                    }
+                    input_dict.update(output_dict)
 
+                    return Response({'message': 'Output data stored successfully',
+                                     'status': status.HTTP_201_CREATED,
+                                     'data': input_dict})
+            project = ProjectDetail.objects.get(project_name=request.data['project_name'])
             create_param = InputParameters.objects.create(
                 target_nh3_production_ktpa=request.data['target_nh3_production_ktpa'],
                 max_iex_sale_perc=request.data['max_iex_sale_perc'],
@@ -105,14 +143,17 @@ class ExcelImport(generics.GenericAPIView):
                 number_of_solar_sites=request.data['number_of_solar_sites'],
                 number_of_wind_sites=request.data['number_of_wind_sites'],
                 excel_file=filepath.name,
-                project=instance
+                project=project
             )
             project_id = create_param.id
             processes = [
-                Process(target=project_assumption, args=(filepath, project_id, error_dict)),
+                # Process(target=project_assumption, args=(filepath, project_id, error_dict)),
                 Process(target=requrired_data, args=(filepath, project_id, error_dict)),
-                Process(target=solar_profile, args=(filepath, project_id, error_dict)),
-                Process(target=wind_profile, args=(filepath, project_id, error_dict))
+                # Process(target=solar_profile, args=(filepath, project_id, error_dict)),
+                # Process(target=wind_profile, args=(filepath, project_id, error_dict)),
+                Process(target=project_assump, args=(filepath, project_id, error_dict)),
+                Process(target=solarprofile, args=(filepath, project_id, error_dict)),
+                Process(target=windprofile, args=(filepath, project_id, error_dict))
             ]
 
             for p in processes:
@@ -122,21 +163,24 @@ class ExcelImport(generics.GenericAPIView):
             if error_dict:
                 error_messages = [f"{key}: {msg}" for key, msg in error_dict.items()]
                 print(error_messages)
-                return Response({"status": "error"})
+                return Response({"status": "error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            df = main_func(project_id, error_dict)
             create_output = OtherAttributeOutput.objects.create(
-                ghs_capacity_tonnes=random.uniform(0, 50),
-                electrolyser_capacity_mw=random.uniform(0, 50),
-                bid_capacity_mw=random.uniform(0, 50),
-                nh3_production_tonnes=random.uniform(0, 50),
-                carbon_intensity_h2=random.uniform(0, 50),
-                carbon_intensity_nh3=random.uniform(0, 50),
-                iex_sale_percentage=random.uniform(0, 50),
+                ghs_capacity_tonnes=round(random.uniform(0, 50), 2),
+                electrolyser_capacity_mw=round(random.uniform(0, 50), 2),
+                bid_capacity_mw=round(random.uniform(0, 50), 2),
+                nh3_production_tonnes=round(random.uniform(0, 50), 2),
+                carbon_intensity_h2=round(random.uniform(0, 50), 2),
+                carbon_intensity_nh3=round(random.uniform(0, 50), 2),
+                iex_sale_percentage=round(random.uniform(0, 50), 2),
                 version_id=project_id
             )
             s_w_o_t = output(int(create_param.number_of_solar_sites), int(create_param.number_of_wind_sites),
                              create_output.id)
             InputParameters.objects.filter(id=project_id).update(processed=1)
-            return Response({
+            serializer = self.get_serializer(create_param)
+            input_dict = serializer.data
+            output_dict = {
                 'ghs_capacity_tonnes': create_output.ghs_capacity_tonnes,
                 'electrolyser_capacity_mw': create_output.electrolyser_capacity_mw,
                 'bid_capacity_mw': create_output.bid_capacity_mw,
@@ -144,13 +188,51 @@ class ExcelImport(generics.GenericAPIView):
                 'carbon_intensity_h2': create_output.carbon_intensity_h2,
                 'carbon_intensity_nh3': create_output.carbon_intensity_nh3,
                 'iex_sale_percentage': create_output.iex_sale_percentage,
-                'solar_value': s_w_o_t[0],
-                'wind_value': s_w_o_t[1]
-            }, status=status.HTTP_201_CREATED)
+                'solar_value': ", ".join(map(str, s_w_o_t[0])),
+                'wind_value': ", ".join(map(str, s_w_o_t[1]))
+            }
+            input_dict.update(output_dict)
+            return Response({'message': 'Output data stored successfully',
+                             'status': status.HTTP_201_CREATED,
+                             'data': input_dict})
 
-    except Exception as err:
-        print({"error": f"{type(err).__name__} was raised: {err} Error on line " + format(
-            sys.exc_info()[-1].tb_lineno)})
+        except ProjectDetail.DoesNotExist:
+            return Response({'status': status.HTTP_404_NOT_FOUND,
+                             'message': f"Project {request.data['project_name']} doesnot exists."},
+                            status=status.HTTP_404_NOT_FOUND)
+
+
+class Logs(generics.GenericAPIView):
+    def get(self, request):
+        queryset = ProjectDetail.objects.select_related(
+            'inputparameters',
+            'inputparameters__otherattributeoutput'
+        ).values(
+            'project_name',
+            'inputparameters__target_nh3_production_ktpa',
+            'inputparameters__max_iex_sale_perc',
+            'inputparameters__max_ci_kg_CO2_kg_H2',
+            'inputparameters__max_ci_t_CO2_t_NH3',
+            'inputparameters__number_of_solar_sites',
+            'inputparameters__number_of_wind_sites',
+            'inputparameters__excel_file',
+            'inputparameters__version',
+            'inputparameters__otherattributeoutput__ghs_capacity_tonnes',
+            'inputparameters__otherattributeoutput__electrolyser_capacity_mw',
+            'inputparameters__otherattributeoutput__bid_capacity_mw',
+            'inputparameters__otherattributeoutput__nh3_production_tonnes',
+            'inputparameters__otherattributeoutput__carbon_intensity_h2',
+            'inputparameters__otherattributeoutput__carbon_intensity_nh3',
+            'inputparameters__otherattributeoutput__iex_sale_percentage'
+        )
+
+        records = []
+        for record in queryset:
+            records.append(record)
+
+        return Response({'message': 'Logs Created Successfully',
+                         'status': status.HTTP_201_CREATED,
+                         'data': records})
 
 
 class RetrieveApi(generics.GenericAPIView):
@@ -166,7 +248,6 @@ class RetrieveApi(generics.GenericAPIView):
             query = OtherAttributeOutput.objects.filter(version_id=version_query).first()
             solar_value = SolarOutput.objects.filter(otherattribute_id=query.id).values_list('solar_value', flat=True)
             wind_value = WindOutput.objects.filter(otherattribute_id=query.id).values_list('wind_value', flat=True)
-            print(solar_value)
             serializer = OtherAttributeOutputSerializer(query)
             dz_output = serializer.data
             dz_output['solar_value'] = list(solar_value)
@@ -182,9 +263,21 @@ logger = logging.getLogger(__name__)
 
 
 class DelApi(generics.GenericAPIView):
+    def delete(self, request, pk):
+        logger.info("Delete request received")
+        deleted, _ = ProjectDetail.objects.filter(project_id=pk).delete()
+        if deleted:
+            logger.info("Data deleted successfully")
+            return Response({"message": "Data deleted"}, status=status.HTTP_200_OK)
+        else:
+            logger.info("No data found to delete")
+            return Response({"message": "No data found"}, status=status.HTTP_404_NOT_FOUND)
+
+
+class EmptyProjectTable(generics.GenericAPIView):
     def delete(self, request):
         logger.info("Delete request received")
-        deleted, _ = ProjectDetail.objects.filter(project_id=3).delete()
+        deleted = ProjectDetail.objects.all().delete()
         if deleted:
             logger.info("Data deleted successfully")
             return Response({"message": "Data deleted"}, status=status.HTTP_200_OK)

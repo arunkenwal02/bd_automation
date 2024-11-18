@@ -24,9 +24,7 @@ SECRET_KEY = 'django-insecure-+tn)t@lyj2jdj&db%#7n_)h&92s*#-vd%31z#%2r$u1vgpj22!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*'
-]  #### to allow all the host ['*']
+ALLOWED_HOSTS = ['*']  #### to allow all the host ['*']
 
 # Application definition
 
@@ -50,13 +48,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+import os
 
 ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,15 +80,17 @@ load_dotenv()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mssql',
         'NAME': env['NAME'],
         'USER': env['USER'],
         'PASSWORD': env['PASSWORD'],
         'HOST': env['HOST'],
         'PORT': env['PORT'],
+        # 'OPTIONS': {
+        #     'driver': 'ODBC Driver 18 for SQL Server',
+        # },
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 

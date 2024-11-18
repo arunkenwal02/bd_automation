@@ -5,6 +5,7 @@ from django.db.models import Max
 class ProjectDetail(models.Model):
     project_id = models.AutoField(primary_key=True)
     project_name = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
@@ -101,33 +102,34 @@ class Nh3_H2_Inputs(models.Model):
 
 class Electrolyzer(models.Model):
     id = models.AutoField(primary_key=True)
-    lower_end_range_elz_loading = models.FloatField()
-    specific_power_actual_generation_kwh_per_kg_h2 = models.FloatField()
-    ac_dc_conversion_losses_perc = models.FloatField()
+    lower_end_range_elz_loading = models.FloatField(blank=False, null=False)
+    specific_power_actual_generation_kwh_per_kg_h2 = models.FloatField(blank=False, null=False)
+    ac_dc_conversion_losses_perc = models.FloatField(blank=False, null=False)
     version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
 
 
 class ConstructionCosting(models.Model):
     id = models.AutoField(primary_key=True)
     capex = models.CharField(max_length=100, blank=False, null=False)
-    uom = models.CharField(max_length=100)
-    value = models.FloatField()
+    uom = models.CharField(max_length=100, blank=False, null=False)
+    value = models.FloatField(blank=False, null=False)
     version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
 
 
 class OperationalCosting(models.Model):
     id = models.AutoField(primary_key=True)
     npv_of_opex = models.CharField(max_length=100, blank=False, null=False)
-    uom = models.CharField(max_length=100)
-    value = models.FloatField()
+    uom = models.CharField(max_length=100, blank=False, null=False)
+    value = models.FloatField(blank=False, null=False)
     version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
 
 
 class NH3_Plant(models.Model):
     id = models.AutoField(primary_key=True)
-    nh3_tpd = models.FloatField()
-    nh3_power_requirement_mw = models.FloatField()
-    capex_usd_mn = models.FloatField()
+    nh3_tpd = models.FloatField(blank=False, null=False)
+    nh3_power_requirement_mw = models.FloatField(blank=False, null=False)
+    capex_usd_mn = models.FloatField(blank=False, null=False)
+    capex_inr_mn = models.FloatField(blank=True, null=True)
     version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
 
 
@@ -176,3 +178,38 @@ class WindOutput(models.Model):
     otherattribute = models.ForeignKey(OtherAttributeOutput, on_delete=models.CASCADE)
     wind_value = models.FloatField()
 
+
+class ProjectAssumption(models.Model):
+    group = models.CharField(max_length=100, blank=True)
+    parameter = models.CharField(max_length=100, blank=True)
+    unit = models.CharField(max_length=100, blank=True, null=True)
+    para_value = models.FloatField(blank=True)
+    version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
+
+
+class Solar_Profile(models.Model):
+    date = models.DateField()
+    day_of_year = models.IntegerField()
+    day_of_month = models.IntegerField()
+    month = models.IntegerField()
+    time = models.IntegerField()
+    unit_solar1 = models.FloatField(blank=True, null=True)
+    unit_solar2 = models.FloatField(blank=True, null=True)
+    unit_solar3 = models.FloatField(blank=True, null=True)
+    unit_solar4 = models.FloatField(blank=True, null=True)
+    unit_solar5 = models.FloatField(blank=True, null=True)
+    version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
+
+
+class Wind_Profile(models.Model):
+    date = models.DateField()
+    day_of_year = models.IntegerField()
+    day_of_month = models.IntegerField()
+    month = models.IntegerField()
+    time = models.IntegerField()
+    unit_wind1 = models.FloatField(blank=True, null=True)
+    unit_wind2 = models.FloatField(blank=True, null=True)
+    unit_wind3 = models.FloatField(blank=True, null=True)
+    unit_wind4 = models.FloatField(blank=True, null=True)
+    unit_wind5 = models.FloatField(blank=True, null=True)
+    version = models.ForeignKey(InputParameters, on_delete=models.CASCADE)
