@@ -38,7 +38,7 @@ class ExcelImport(generics.GenericAPIView):
 
     def get(self, request):
         project_list = list(ProjectDetail.objects.values_list('project_name', flat=True))
-        return Response({'project_list': project_list}, status=status.HTTP_200_OK)
+        return Response({'project_name': project_list}, status=status.HTTP_200_OK)
 
     def post(self, request):
 
@@ -206,9 +206,12 @@ class Logs(generics.GenericAPIView):
     def get(self, request):
         queryset = ProjectDetail.objects.select_related(
             'inputparameters',
-            'inputparameters__otherattributeoutput'
+            'inputparameters__otherattributeoutput',
+            'inputparameters__otherattributeoutput__solaroutput',
+            'inputparameters__otherattributeoutput__windoutput'
         ).values(
             'project_name',
+            'created_at',
             'inputparameters__target_nh3_production_ktpa',
             'inputparameters__max_iex_sale_perc',
             'inputparameters__max_ci_kg_CO2_kg_H2',
@@ -223,12 +226,16 @@ class Logs(generics.GenericAPIView):
             'inputparameters__otherattributeoutput__nh3_production_tonnes',
             'inputparameters__otherattributeoutput__carbon_intensity_h2',
             'inputparameters__otherattributeoutput__carbon_intensity_nh3',
-            'inputparameters__otherattributeoutput__iex_sale_percentage'
+            'inputparameters__otherattributeoutput__iex_sale_percentage',
+            # 'inputparameters__otherattributeoutput__solaroutput__solar_value',
+            # 'inputparameters__otherattributeoutput__windoutput__wind_value'  # Fixed reference to wind_value
         )
 
         records = []
         for record in queryset:
-            records.append(record)
+            if record['inputparameters__excel_file']:
+                record['created_at'] = record['created_at'].date()
+                records.append(record)
 
         return Response({'message': 'Logs Created Successfully',
                          'status': status.HTTP_201_CREATED,

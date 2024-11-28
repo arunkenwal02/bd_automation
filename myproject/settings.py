@@ -91,6 +91,9 @@ DATABASES = {
         # },
     }
 }
+
+# DJANGO_HOST = env["DJANGO_HOST"]
+# DJANGO_PORT = env["DJANGO_PORT"]
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 

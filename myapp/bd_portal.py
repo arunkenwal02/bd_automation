@@ -5,6 +5,7 @@ import sys
 # from .db_con import engine
 import warnings
 import numpy as np
+
 warnings.filterwarnings("ignore")
 
 import os
@@ -232,11 +233,11 @@ def wind_profile(excel_file, param_id, error_dict):
 
 def output(x, n, other_id):
     solar_values = pd.DataFrame({
-        'solar_value': np.round(np.random.uniform(100,200, x), 3),
+        'solar_value': np.round(np.random.uniform(100, 200, x), 3),
         'otherattribute_id': other_id
     })
     wind_values = pd.DataFrame({
-        'wind_value': np.round(np.random.uniform(100,200, n), 3),
+        'wind_value': np.round(np.random.uniform(100, 200, n), 3),
         'otherattribute_id': other_id
     })
     solar_objects = [
@@ -366,9 +367,6 @@ def windprofile(excel_file, param_id, error_dict):
             sys.exc_info()[-1].tb_lineno)
 
 
-
-
-
 def main_func(param_id, error_dict):
     try:
         solar_profile = pd.DataFrame(Solar_Profile.objects.filter(version=param_id).values())
@@ -440,7 +438,8 @@ def main_func(param_id, error_dict):
         iex_sale_cost = cost_data.iloc[27, 3]
         iex_purchase_cost = cost_data.iloc[28, 3]
 
-
     except Exception as err:
         error_dict['error'] = f"{type(err).__name__} was raised: {err} Error on line " + format(
             sys.exc_info()[-1].tb_lineno)
+
+
